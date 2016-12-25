@@ -16,7 +16,8 @@
             }
 
             if (mealCount) {
-                $scope.messageBox = {'color': '#2ECC71', 'border': '1px solid #2ECC71'};
+                $scope.messageBox = {'color': '#2ECC71', 'border': '2px solid #2ECC71'};
+                $scope.textBox = {'border': '1px solid #2ECC71'};
                 
                 if (mealCount > 0 && mealCount <= 3) {
                     $scope.message = "Enjoy!";
@@ -25,7 +26,8 @@
                 }
 
             } else {
-                $scope.messageBox = {'color': '#E74C3C', 'border': '1px solid #E74C3C'};
+                $scope.messageBox = {'color': '#E74C3C', 'border': '2px solid #E74C3C'};
+                $scope.textBox = {'border': '1px solid #E74C3C'};
                 $scope.message = "Please enter data first!";
             }
 
