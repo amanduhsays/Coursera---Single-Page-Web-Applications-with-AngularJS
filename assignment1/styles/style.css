@@ -39,15 +39,15 @@ h1 {
 }
 
 p {
-	margin: 10px 0 20px 0;
+    margin: 10px 0 20px 0;
 }
 
 a.navbar-brand {
-	color: #fff !important;
+    color: #fff !important;
 }
 
 .align-center {
-	text-align: center;
+    text-align: center;
 }
 
 .navbar {
@@ -74,15 +74,15 @@ a.navbar-brand {
 
 .btn:hover,
 .btn:active {
-	color: #fff;
-	background-color: #f39c12;
-	-webkit-transform: scale(1.05);
-	    -ms-transform: scale(1.05);
-	        transform: scale(1.05);
+    color: #fff;
+    background-color: #f39c12;
+    -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+            transform: scale(1.05);
 }
 
 .message {
-	display: none;
+    display: none;
     font-weight: bold;
     padding: 10px;
     text-align: center;
@@ -90,8 +90,13 @@ a.navbar-brand {
     margin: 10px auto;
 }
 
+.note {
+    font-size: 80%;
+    text-align: center;
+}
+
 .footer {
-	margin-top: 40px;
-	font-size: 80%;
+    margin-top: 40px;
+    font-size: 80%;
     text-align: center;
 }

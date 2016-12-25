@@ -31,10 +31,13 @@
         <div class="form-group align-center">
             <button class="btn btn-default" ng-click="checkLunch();">Check If Too Much</button>
         </div>
-        <div class="form-group message" id="message">
+        <div class="form-group message" ng-style="messageBox">
             <!-- Your message can go here. -->
             {{message}}
         </div>
+        <p class="note">
+            *JQuery was used solely for the fade in and fade out effects.
+        </p>
         <div class="footer">
             Made for
             <br>

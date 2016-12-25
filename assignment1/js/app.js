@@ -7,7 +7,7 @@
 
     function LunchCheckerController($scope) {
         $scope.checkLunch = function() {
-            var inputDiv = document.getElementById("message");
+            var inputDiv = angular.element($("[ng-style]"));
             $(inputDiv).hide();
 
             var mealCount = 0;
@@ -16,7 +16,8 @@
             }
 
             if (mealCount) {
-                makeGreenInfo(inputDiv);
+                $scope.messageBox = {'color': '#2ECC71', 'border': '1px solid #2ECC71'};
+                
                 if (mealCount > 0 && mealCount <= 3) {
                     $scope.message = "Enjoy!";
                 } else if (mealCount > 3) {
@@ -24,21 +25,11 @@
                 }
 
             } else {
-                makeRedInfo(inputDiv);
+                $scope.messageBox = {'color': '#E74C3C', 'border': '1px solid #E74C3C'};
                 $scope.message = "Please enter data first!";
             }
 
             $(inputDiv).fadeIn();
-        }
-
-        function makeGreenInfo(divBox) {
-            divBox.style.color = "#2ECC71";
-            divBox.style.border = "1px solid #2ECC71";
-        }
-
-        function makeRedInfo(divBox) {
-            divBox.style.color = "#E74C3C";
-            divBox.style.border = "1px solid #E74C3C";
         }
 
         function countInput(input) {
