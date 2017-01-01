@@ -1,0 +1,146 @@
+/* COLOR SCHEME 
+Green1: #558C89
+Green2: #74AFAD
+Orange: #D9853B
+White: #ECECEA
+*/
+
+/* ---------------------------------------------------- */
+/* GIVEN */
+/* ---------------------------------------------------- */
+
+.emptyMessage {
+    font-weight: bold;
+    color: red;
+}
+
+li {
+    margin-bottom: 7px;
+}
+
+li > button {
+    margin-left: 6px;
+}
+
+button > span {
+    color: green;
+}
+
+
+/* ---------------------------------------------------- */
+/* DEFAULTS */
+/* ---------------------------------------------------- */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    position: relative;
+    background-color: #ECECEA;
+    color: #333;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+    color: #558C89;
+}
+
+h1 {
+    font-family: 'Slabo 27px', serif;
+    font-weight: bold;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 130%;
+    color: #333;
+}
+
+p {
+    margin: 10px 0 20px 0;
+}
+
+a.navbar-brand {
+    color: #fff !important;
+}
+
+#lunch-menu {
+    -webkit-border-radius: 0;
+            border-radius: 0;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.navbar {
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    border: 0;
+    color: #fff;
+    background-color: #558C89;
+}
+
+.btn.btn-default {
+    margin-left: 5px;
+}
+
+.btn,
+.btn:visited,
+.btn:focus {
+    font-size: 80%;
+    padding: 5px 15px 5px 10px;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    margin: 2px auto;
+    -webkit-transition: background-color 0.2s, -webkit-transform 0.2s;
+    transition: background-color 0.2s, -webkit-transform 0.2s;
+    transition: background-color 0.2s, transform 0.2s;
+    transition: background-color 0.2s, transform 0.2s, -webkit-transform 0.2s;
+    color: #fff;
+    background-color: #D9853B;
+}
+
+.btn:hover,
+.btn:active {
+    color: #fff;
+    background-color: #f39c12;
+    -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+            transform: scale(1.05);
+}
+
+.message {
+    display: none;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    max-width: 500px;
+    margin: 10px auto;
+    font-size: 110%;
+}
+
+.note {
+    font-size: 80%;
+    text-align: center;
+}
+
+.footer {
+    margin-top: 40px;
+    font-size: 80%;
+    text-align: center;
+}
+
+.glyphicon {
+    margin-right: 5px;
+}
