@@ -32,15 +32,16 @@
 
     function ToBuyController(ShoppingListCheckOffService) {
         var controller = this;
+
         controller.toBuyItems = ShoppingListCheckOffService.getToBuyItems();
 
         controller.moveItem = function(itemIndex) {
-            try {
-                ShoppingListCheckOffService.moveItem(itemIndex);
-            } catch (error) {
-                controller.errorMessage = error.message;
-            }
+            ShoppingListCheckOffService.moveItem(itemIndex);
         };
+
+         controller.isToBuyListEmpty = function() {
+             return ShoppingListCheckOffService.isToBuyListEmpty();
+        }
     }
 
 
@@ -50,17 +51,10 @@
     function AlreadyBoughtController($scope, ShoppingListCheckOffService) {
         var controller = this;
 
-        $scope.$watch(function() {
-            refreshError();
-        })
+        controller.boughtItems = ShoppingListCheckOffService.getBoughtItems();
 
-        function refreshError() {
-            try {
-                controller.boughtItems = ShoppingListCheckOffService.getBoughtItems();
-                controller.errorMessage = undefined;
-            } catch (error) {
-                controller.errorMessage = error.message;
-            }
+        controller.isBoughtListEmpty = function() {
+             return ShoppingListCheckOffService.isBoughtListEmpty();
         }
     }
 
@@ -75,10 +69,6 @@
             var movingItem = toBuyItems[itemIndex];
             toBuyItems.splice(itemIndex, 1);
             boughtItems.push(movingItem);
-
-            if (toBuyItems.length < 1) {
-                throw new Error("Everything is bought!");
-            }
         }
 
         service.getToBuyItems = function() {
@@ -86,11 +76,15 @@
         };
 
         service.getBoughtItems = function() {
-            if (boughtItems.length > 0) {
-                return boughtItems;
-            } else {
-                throw new Error("Nothing is bought yet");
-            }
+            return boughtItems;
+        };
+
+        service.isToBuyListEmpty = function () {
+            return service.getToBuyItems().length === 0 ? true : false;
+        };
+
+        service.isBoughtListEmpty = function () {
+            return service.getBoughtItems().length === 0 ? true : false;
         };
     }
 
