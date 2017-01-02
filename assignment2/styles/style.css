@@ -120,6 +120,12 @@ a.navbar-brand {
             transform: scale(1.05);
 }
 
+.list {
+    list-style-type: square;
+    margin-left: 18px;
+    margin-top: 20px;
+}
+
 .message {
     display: none;
     font-weight: bold;

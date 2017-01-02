@@ -22,15 +22,16 @@
         </div>
     </nav>
     <div class="container">
-        <o>
+        <a href="../index.html">&larr; Back to site navigation</a>
+        <p>
             It's all vegetables because vegetables are good for health.
-        </o>
+        </p>
         <div class="row">
             <!-- To Buy List -->
             <br>
             <div class="col-md-6" ng-controller='ToBuyController as toBuyList'>
                 <h2>To Buy:</h2>
-                <ul>
+                <ul class="list">
                     <li ng-repeat="item in toBuyList.toBuyItems">
                         Buy {{ item.quantity }} {{ item.name }}
                         <button class="btn btn-default" ng-click="toBuyList.moveItem($index);"><span class="glyphicon glyphicon-ok"></span>Bought</button>
