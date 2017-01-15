@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Narrow Down Your Menu Choice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body ng-app='NarrowItDownApp'>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    Narrow Down Your Chinese Menu Choice
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div id="loaderContainer">
+        <div class="loader"></div>
+    </div>
+    <div class="container">
+        <a href="../index.html">&larr; Back to site navigation</a>
+        <p>Sorry for the late assignment :( <br>
+        This page searches for keywords in a menu's item description. Menu item will only appear is all keywords given are present in the description string. *Menu items are taken from: 
+        <a href="https://davids-restaurant.herokuapp.com/menu_items.json">https://davids-restaurant.herokuapp.com/menu_items.json</a></p>
+
+        <div ng-controller="NarrowItDownController as narrowDown">
+            <div class="row">
+                <form class="form-group" submit="narrowDown.search()">
+                    <input type="text" placeholder="Search Term" class="form-control input" ng-model="narrowDown.searchTerm">
+                    <button class="btn btn-primary" ng-click="narrowDown.search()">Narrow It Down For Me!</button>
+                </form>
+            </div>
+            <div class="row">
+                <div ng-if="narrowDown.hasError == true" class="errorMessage">{{narrowDown.errorMessage}}</div>
+                <div ng-if="narrowDown.dataFound == true && narrowDown.list.length != 0" class="totalFound">Number of items found = {{narrowDown.list.length}}</div>
+            <div ng-if="narrowDown.dataFound == true && narrowDown.list.length == 0" class="errorMessage">Nothing found</div>
+            </div>
+            <!-- found-items should be implemented as a component -->
+            <found-items items="narrowDown.list" on-remove="narrowDown.removeItem(index)"></found-items>
+        </div>
+
+    </div>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script> -->
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
