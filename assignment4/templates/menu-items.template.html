@@ -7,8 +7,9 @@
 <ol class="list">
 	<li ng-repeat="item in menuItems.items">
 		{{item.name}} ({{item.short_name}})
+		<span class="description" style="float:right">{{item.price_large | currency : $}}</span>
         <div class="row">
-            <span class="description">{{item.description}}</span>
+            <span class="description" style="width:90%;text-overflow: ellipsis;">{{item.description}}</span>
         </div>
 	</li>
 </ol>

@@ -10,6 +10,8 @@
     function ItemsController(items) {
         var menuItems = this;
 
+        console.log(items.menu_items);
+
         menuItems.header = items.category;
         menuItems.items = items.menu_items;
     }
