@@ -1,0 +1,14 @@
+<a ui-sref="categories">&larr; Back to Categories</a>
+<div class="clearfix">
+
+<h2>{{menuItems.header.name}} ({{menuItems.header.short_name}})</h2>
+<p>{{menuItems.header.special_instructions}}</p>
+
+<ol class="list">
+	<li ng-repeat="item in menuItems.items">
+		{{item.name}} ({{item.short_name}})
+        <div class="row">
+            <span class="description">{{item.description}}</span>
+        </div>
+	</li>
+</ol>

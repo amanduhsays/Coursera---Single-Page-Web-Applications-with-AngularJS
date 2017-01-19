@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Menu App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="../favicon/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../favicon/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../favicon/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../favicon/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="../favicon/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="../favicon/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="../favicon/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../favicon/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="../favicon/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="../favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="../favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../favicon/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="../favicon/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="&nbsp;" />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+
+</head>
+
+<body ng-app='MenuApp'>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    Menu App
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        
+        <loading-spinner></loading-spinner>
+        <ui-view></ui-view>
+
+        <div class="footer">
+            Made for
+            <br>
+            <a href="https://www.coursera.org/learn/single-page-web-apps-with-angularjs" target="_blank">Single Page Web Applications with AngularJS course on Coursera</a>
+            <br>
+            <br> Done by
+            <br>
+            <a href="https://amanduhsays.github.io">Amanda Ng</a>
+        </div>
+    </div>
+
+    <!-- Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+    <!-- <script src="js/lib/angular.min.js"></script> -->
+    <script src="js/lib/angular-ui-router.min.js"></script>
+
+    <!-- Modules -->
+    <script src="js/data.module.js"></script>
+    <script src="js/menuapp.module.js"></script>
+    <script src="js/spinner.module.js"></script>
+
+    <!-- Routes -->
+    <script src="js/routes.js"></script>
+
+    <!-- 'MenuApp' module artifacts -->
+    <script src="js/menudata.service.js"></script>
+    <script src="js/categories.component.js"></script>
+    <script src="js/categories.controller.js"></script>
+    <script src="js/items.component.js"></script>
+    <script src="js/items.controller.js"></script>
+    <script src="js/loadingspinner.component.js"></script>
+</body>
+
+</html>
