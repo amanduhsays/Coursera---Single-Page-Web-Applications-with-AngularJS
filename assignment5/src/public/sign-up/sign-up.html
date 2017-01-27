@@ -1,0 +1,63 @@
+<div class="container" ng-controller="SignUpController as SignUpCtrl">
+    <div class="row">
+        <div class="col-xs-12">
+            All fields are required*
+            <br>
+            <br>
+        </div>
+    </div>
+    <form name='signupForm' novalidate>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" class="form-control" ng-model="SignUpCtrl.user.firstName" id="firstName" placeholder="Enter First Name" required>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control" ng-model="SignUpCtrl.user.lastName" id="lastName" placeholder="Enter Last Name" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" name="email" class="form-control" ng-model="SignUpCtrl.user.email" id="email" aria-describedby="emailHelp" placeholder="Enter Email" required>
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <span ng-if="signupForm.email.$invalid && signupForm.email.$touched" class="error-message">
+                        Must be a valid email address: handle@domain format
+                    </span>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="contact">Contact Number</label>
+                    <input type="tel" class="form-control" ng-model="SignUpCtrl.user.contact" id="contact" placeholder="Enter Contact Number" required>
+                    <small id="contactHelp" class="form-text text-muted">Neither will we share your contact number.</small>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <label for="favouriteDish">What's your favourite dish?</label>
+                    <input type="text" class="form-control" ng-model="SignUpCtrl.user.favouriteDish" id="favouriteDish" placeholder="Enter Short Name of Favourite Dish" required>
+                    <div style="margin-top: 10px; color: #f6b319" ng-if="SignUpCtrl.hasError == 1">
+                        No such menu number exists
+                    </div>
+                    <div style="margin-top: 10px;" ng-if="SignUpCtrl.isClear == 1">
+                        Your information has been saved
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-warning" ng-disabled="signupForm.$invalid" ng-click="SignUpCtrl.submit()">Submit</button>
+        <div style="margin-top: 10px;" ng-if="signupForm.$invalid">
+            The form is still invalid!
+        </div>
+
+    </form>
+</div>
