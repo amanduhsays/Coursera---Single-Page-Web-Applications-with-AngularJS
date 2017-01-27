@@ -14,6 +14,7 @@
 
         $ctrl.submit = function () {
             $ctrl.isClear = 0;
+            $ctrl.hasError = 1;
 
             var shortName = $ctrl.user.favouriteDish;
             MenuService.getItem(shortName).then(function (response) {
